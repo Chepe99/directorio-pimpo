@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Brave Natalia Pick's RH Final</title>
+<style>
+    body { font-family: Arial, sans-serif; background: #f8f9fa; padding: 20px; text-align: center; }
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    h2 { font-size: 24px; margin-top: 40px; }
+    .button-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .card-wrapper { display: flex; align-items: center; gap: 5px; position: relative; }
+    .card { padding: 15px; border-radius: 10px; color: white; width: 220px; cursor: pointer; }
+    .desc { font-size: 13px; margin-top: 5px; display: block; }
+    .menu-btn-box { width: 20px; height: 40px; display: flex; align-items: center; justify-content: center; background-color: transparent; border: 1px solid #999; color: #333; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    .menu-options { position: absolute; top: 50px; right: 0; background-color: #ffffff; color: #000; border-radius: 5px; box-shadow: 0px 2px 6px rgba(0,0,0,0.2); z-index: 10; display: none; }
+    .menu-options div { padding: 8px 12px; border-bottom: 1px solid #ddd; cursor: pointer; }
+    .menu-options div:last-child { border-bottom: none; }
+    input, button, select { padding: 8px; width: 260px; margin: 5px auto; display: block; }
+    .formulario { margin-top: 40px; }
+  </style>
+</head>
+<body>
+<h1 contenteditable="true" style="outline: none; text-align: center;">Directorio Jurídico de Natalia</h1>
+<h2 contenteditable="true" style="outline: none; text-align: center;">Colombia</h2>
+<div class="button-container" id="nacional"><div class="card-wrapper"><div class="card" style="background-color: rgb(40, 167, 69);"><strong>ACRIP Nacional</strong><span class="desc">Profesionales en gestión humana.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-0"><div onclick="eliminar(&quot;nacional&quot;, 0)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(111, 66, 193);"><strong>Acrip Valle</strong><span class="desc">Regional ACRIP para RRHH.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-1"><div onclick="eliminar(&quot;nacional&quot;, 1)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(32, 201, 151);"><strong>ADRES</strong><span class="desc">Sistema de salud.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-2"><div onclick="eliminar(&quot;nacional&quot;, 2)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 123, 255);"><strong>Asofondos</strong><span class="desc">Fondos de pensiones.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-3"><div onclick="eliminar(&quot;nacional&quot;, 3)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(214, 51, 132);"><strong>Buk Colombia</strong><span class="desc">Talento humano y nómina.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-4"><div onclick="eliminar(&quot;nacional&quot;, 4)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(253, 126, 20);"><strong>Cafam</strong><span class="desc">Caja de compensación.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-5"><div onclick="eliminar(&quot;nacional&quot;, 5)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 149, 0);"><strong>CO - Cámara Colombiana de Comercio Electrónico (CCCE)</strong><span class="desc">Regulación, comercio digital, eventos y estadísticas de e-commerce.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-6"><div onclick="eliminar(&quot;nacional&quot;, 6)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 98);"><strong>CO - Cámara de Comercio de Bogotá (CCB)</strong><span class="desc">Consulta de certificados, constitución de sociedades, registro mercantil, conciliaciones.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-7"><div onclick="eliminar(&quot;nacional&quot;, 7)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(81, 160, 59);"><strong>CO - Coljuristas, CCJ</strong><span class="desc">Publicación de jurisprudencia, análisis en derechos humanos, justicia transicional y doctrina jurídica.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-8"><div onclick="eliminar(&quot;nacional&quot;, 8)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(212, 0, 255);"><strong>CO - Consejo de Estado</strong><span class="desc">Jurisprudencia del alto tribunal de lo contencioso administrativo.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-9"><div onclick="eliminar(&quot;nacional&quot;, 9)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 0);"><strong>CO - Corte Constitucional</strong><span class="desc">Consulta de sentencias, jurisprudencia y acciones públicas.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-10"><div onclick="eliminar(&quot;nacional&quot;, 10)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(174, 0, 255);"><strong>CO - Función Pública</strong><span class="desc">Normativa laboral y organizacional del Estado colombiano.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-11"><div onclick="eliminar(&quot;nacional&quot;, 11)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(140, 0, 255);"><strong>CO - Legiscomex</strong><span class="desc">Inteligencia de negocios para comercio internacional (aranceles, tratados, estadísticas).</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-12"><div onclick="eliminar(&quot;nacional&quot;, 12)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(174, 255, 0);"><strong>CO - Leyex.info</strong><span class="desc">Base de datos legislativa gratuita, buscador por palabra clave.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-13"><div onclick="eliminar(&quot;nacional&quot;, 13)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(187, 0, 255);"><strong>CO - MinComercio (Ministerio de Comercio, Industria y Turismo)</strong><span class="desc">Normas de comercio exterior, zonas francas, comercio electrónico.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-14"><div onclick="eliminar(&quot;nacional&quot;, 14)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 132, 255);"><strong>CO - MinJusticia</strong><span class="desc">Leyes, políticas públicas y trámites relacionados con justicia.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-15"><div onclick="eliminar(&quot;nacional&quot;, 15)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 17);"><strong>CO - Rama Judicial</strong><span class="desc">Portal de consulta de procesos, tutelas y notificaciones judiciales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-16"><div onclick="eliminar(&quot;nacional&quot;, 16)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 76);"><strong>CO - RUES (Registro Único Empresarial y Social)</strong><span class="desc">Acceso a toda la información de sociedades en Colombia.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-17"><div onclick="eliminar(&quot;nacional&quot;, 17)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 174, 0);"><strong>CO - SIC</strong><span class="desc">Superintendencia de Industria y Comercio</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-18"><div onclick="eliminar(&quot;nacional&quot;, 18)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 225, 255);"><strong>CO - Sistema Único de Información Normativa (SUIN)</strong><span class="desc">Normograma actualizado del Estado colombiano.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-19"><div onclick="eliminar(&quot;nacional&quot;, 19)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 64);"><strong>CO - Supersociedades</strong><span class="desc">Normas para sociedades comerciales, insolvencias y reorganización.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-20"><div onclick="eliminar(&quot;nacional&quot;, 20)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 145);"><strong>CO - Tutelas en línea</strong><span class="desc">Herramienta para presentar tutelas virtuales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-21"><div onclick="eliminar(&quot;nacional&quot;, 21)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(102, 16, 242);"><strong>Colpensiones</strong><span class="desc">Pensión pública.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-22"><div onclick="eliminar(&quot;nacional&quot;, 22)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(232, 62, 140);"><strong>Compensar</strong><span class="desc">Servicios integrales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-23"><div onclick="eliminar(&quot;nacional&quot;, 23)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(230, 126, 34);"><strong>DANE</strong><span class="desc">Estadísticas oficiales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-24"><div onclick="eliminar(&quot;nacional&quot;, 24)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(23, 162, 184);"><strong>DIAN</strong><span class="desc">Tributaria y aduanera.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-25"><div onclick="eliminar(&quot;nacional&quot;, 25)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 193, 7);"><strong>El Empleo</strong><span class="desc">Portal de empleo.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-26"><div onclick="eliminar(&quot;nacional&quot;, 26)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(30, 0, 255);"><strong>El Tiempo</strong><span class="desc">Diario Colombiano de noticias </span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-27"><div onclick="eliminar(&quot;nacional&quot;, 27)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(220, 53, 69);"><strong>Famisanar</strong><span class="desc">EPS servicios de salud.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-28"><div onclick="eliminar(&quot;nacional&quot;, 28)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(26, 188, 156);"><strong>ICBF</strong><span class="desc">Niñez y familia.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-29"><div onclick="eliminar(&quot;nacional&quot;, 29)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(155, 89, 182);"><strong>Legis Gestión Humana</strong><span class="desc">Normativa RRHH.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-30"><div onclick="eliminar(&quot;nacional&quot;, 30)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(52, 152, 219);"><strong>MinSalud</strong><span class="desc">Salud y protección social.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-31"><div onclick="eliminar(&quot;nacional&quot;, 31)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(142, 68, 173);"><strong>MinTrabajo</strong><span class="desc">Normativa laboral.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-32"><div onclick="eliminar(&quot;nacional&quot;, 32)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(231, 76, 60);"><strong>Observatorio Laboral</strong><span class="desc">Datos laborales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-33"><div onclick="eliminar(&quot;nacional&quot;, 33)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(46, 204, 113);"><strong>Positiva</strong><span class="desc">ARL especializada.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-34"><div onclick="eliminar(&quot;nacional&quot;, 34)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(253, 126, 20);"><strong>Preflex</strong><span class="desc">Tecnología industrial.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-35"><div onclick="eliminar(&quot;nacional&quot;, 35)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(41, 128, 185);"><strong>SENA</strong><span class="desc">Formación técnica gratuita.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-36"><div onclick="eliminar(&quot;nacional&quot;, 36)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(127, 140, 141);"><strong>Supersalud</strong><span class="desc">Control del sistema de salud.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-37"><div onclick="eliminar(&quot;nacional&quot;, 37)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(93, 173, 226);"><strong>UGPP</strong><span class="desc">Fiscaliza seguridad social.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-nacional-38"><div onclick="eliminar(&quot;nacional&quot;, 38)">Eliminar</div></div></div></div>
+<h2 contenteditable="true" style="outline: none; text-align: center;">Francia &amp; Otros</h2>
+<div class="button-container" id="internacional"><div class="card-wrapper"><div class="card" style="background-color: rgb(32, 201, 151);"><strong>Capacitarte</strong><span class="desc">Cursos online profesionales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-0"><div onclick="eliminar(&quot;internacional&quot;, 0)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(111, 66, 193);"><strong>Capacítate para el empleo</strong><span class="desc">Fundación Carlos Slim.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-1"><div onclick="eliminar(&quot;internacional&quot;, 1)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 213);"><strong>Capial Humano</strong><span class="desc">Portal sobre gestión de talento</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-2"><div onclick="eliminar(&quot;internacional&quot;, 2)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(40, 167, 69);"><strong>CEDLAS</strong><span class="desc">Investigación laboral LATAM.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-3"><div onclick="eliminar(&quot;internacional&quot;, 3)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(214, 51, 132);"><strong>DCH</strong><span class="desc">Directivos de RRHH.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-4"><div onclick="eliminar(&quot;internacional&quot;, 4)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(253, 126, 20);"><strong>DCH Colombia</strong><span class="desc">Capítulo Colombia.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-5"><div onclick="eliminar(&quot;internacional&quot;, 5)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 89);"><strong>Doctrine – Jurisprudencia y doctrina</strong><span class="desc">Base de datos legal con fallos judiciales, análisis doctrinal y comentarios jurídicos.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-6"><div onclick="eliminar(&quot;internacional&quot;, 6)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(102, 16, 242);"><strong>Equipos y Talento</strong><span class="desc">Noticias de RRHH.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-7"><div onclick="eliminar(&quot;internacional&quot;, 7)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 238, 255);"><strong>FR - AFE – Agence France Entrepreneur (ex. AFE-Création)</strong><span class="desc">Portal de apoyo a la creación de empresas: guías, normativa, plan de negocios, financiación, acompañamiento.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-8"><div onclick="eliminar(&quot;internacional&quot;, 8)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(115, 0, 255);"><strong>FR - ANEF – Étrangers en France</strong><span class="desc">Étrangers en France	Démarches administratives pour étrangers : séjour, naturalisation.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-9"><div onclick="eliminar(&quot;internacional&quot;, 9)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(72, 7, 85);"><strong>FR - Apec – Association pour l’emploi des cadres</strong><span class="desc">Especializado en empleos cualificados y ejecutivos (juristas, ingenieros, managers), ideal para perfiles profesionales universitarios.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-10"><div onclick="eliminar(&quot;internacional&quot;, 10)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(89, 7, 105);"><strong>FR - Barreau de Paris – Colegio de abogados</strong><span class="desc">Colegio de abogados	Normas éticas, directorio de abogados, servicios y noticias jurídicas del Colegio.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-11"><div onclick="eliminar(&quot;internacional&quot;, 11)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 0);"><strong>FR - BODACC (Bulletin Officiel des Annonces Civiles et Commerciales)</strong><span class="desc">Publicación oficial de eventos comerciales: creación de empresas, cesiones, liquidaciones, procedimientos judiciales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-12"><div onclick="eliminar(&quot;internacional&quot;, 12)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(109, 13, 227);"><strong>FR - BOFiP – Fiscalidad francesa oficial</strong><span class="desc">Normas interpretativas de impuestos, IVA y régimen fiscal aplicables a empresas y personas.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-13"><div onclick="eliminar(&quot;internacional&quot;, 13)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(186, 173, 166);"><strong>FR - CCI Hérault – Chambre de Commerce et d’Industrie (Montpellier)</strong><span class="desc">Apoyo a empresas locales: creación, desarrollo, exportación, formación y representación ante autoridades.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-14"><div onclick="eliminar(&quot;internacional&quot;, 14)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(251, 0, 255);"><strong>FR - CNCDH – Droits de l’Homme</strong><span class="desc">Suivi des droits humains et législation internationale en France.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-15"><div onclick="eliminar(&quot;internacional&quot;, 15)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 157, 255);"><strong>FR - CNIL – Protection des données</strong><span class="desc">Protection des données	Organisme français de protection de la vie privée (RGPD).</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-16"><div onclick="eliminar(&quot;internacional&quot;, 16)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(55, 255, 0);"><strong>FR - Code du Travail Numérique</strong><span class="desc">Interprétation des droits du travail en ligne, clair et interactif.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-17"><div onclick="eliminar(&quot;internacional&quot;, 17)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(211, 112, 105);"><strong>FR - Emploi.gouv.fr – Travail et Emploi</strong><span class="desc">Portal del Ministerio de Trabajo. Información sobre contratos, derechos laborales, tipos de contratos, ayudas a la contratación, inserción laboral y estadísticas del mercado.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-18"><div onclick="eliminar(&quot;internacional&quot;, 18)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(232, 94, 94);"><strong>FR - Emplois Montpellier 3M – Mairie &amp; Métropole</strong><span class="desc">Portal de empleo regional: ofertas públicas y privadas, información sobre reclutamientos administrativos, convocatorias municipales y alertas de empleo.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-19"><div onclick="eliminar(&quot;internacional&quot;, 19)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 170);"><strong>FR - France-Visas</strong><span class="desc">Demande et suivi de visas pour la France.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-20"><div onclick="eliminar(&quot;internacional&quot;, 20)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(154, 77, 14);"><strong>FR - Greffe du Tribunal de Commerce de Montpellier</strong><span class="desc">Gestión del Registro de Comercio y Sociedades (RCS), emisión de Kbis, trámites societarios, audiencias mercantiles y procedimientos de insolvencia. Oficina judicial clave para abogados y empresas de la región.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-21"><div onclick="eliminar(&quot;internacional&quot;, 21)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 123, 255);"><strong>FR - Infogreffe</strong><span class="desc">Registro mercantil de empresas (Kbis, balances, estatutos, procedimientos judiciales). Acceso a información legal y financiera de sociedades.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-22"><div onclick="eliminar(&quot;internacional&quot;, 22)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 200);"><strong>FR - INPI (Institut National de la Propriété Industrielle)</strong><span class="desc">Registro y protección de marcas, patentes, diseños industriales y nombres comerciales en Francia.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-23"><div onclick="eliminar(&quot;internacional&quot;, 23)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 0);"><strong>FR - Légifrance</strong><span class="desc">Portail officiel du droit français : codes, lois, jurisprudence.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-24"><div onclick="eliminar(&quot;internacional&quot;, 24)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(247, 130, 148);"><strong>FR - LinkedIn (Jobs France)</strong><span class="desc">La red profesional más grande del mundo: búsqueda de empleos en toda Francia, incluso en Montpellier. Permite postular directamente, crear alertas laborales y networking profesional</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-25"><div onclick="eliminar(&quot;internacional&quot;, 25)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 251);"><strong>FR - Ministère de la Justice</strong><span class="desc">Informations officielles sur la justice française.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-26"><div onclick="eliminar(&quot;internacional&quot;, 26)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(116, 65, 144);"><strong>FR - Pôle emploi</strong><span class="desc">Portal oficial nacional de empleo en Francia. Ofrece ofertas de trabajo, inscripción, seguimiento de candidaturas y acceso a formación y ayudas.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-27"><div onclick="eliminar(&quot;internacional&quot;, 27)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(137, 82, 72);"><strong>FR - Service Public (Portail officiel)</strong><span class="desc">Portal único de la administración pública francesa. Contiene fichas temáticas, trámites, formularios, normativas y ayudas legales para ciudadanos, empresas y extranjeros.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-28"><div onclick="eliminar(&quot;internacional&quot;, 28)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(174, 0, 255);"><strong>FR - Service-Public.fr</strong><span class="desc">Portal oficial de información y trámites para ciudadanos y empresas: formularios, residencia, trabajo, contratos, familia, etc.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-29"><div onclick="eliminar(&quot;internacional&quot;, 29)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 162);"><strong>FR - Service-public.fr – Droit</strong><span class="desc">Accès aux démarches juridiques et administratives pour citoyens.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-30"><div onclick="eliminar(&quot;internacional&quot;, 30)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(177, 4, 200);"><strong>FR - Service-Public.fr – Emploi et travail</strong><span class="desc">Fichas legales y trámites sobre contratos laborales, despidos, derecho laboral francés.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-31"><div onclick="eliminar(&quot;internacional&quot;, 31)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(22, 243, 239);"><strong>FR - Travail.gouv.fr – Info laboral oficial</strong><span class="desc">Guía del derecho laboral, tipos de contrato, ayudas e inserción profesional.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-32"><div onclick="eliminar(&quot;internacional&quot;, 32)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 149, 0);"><strong>FR - Tribunal de commerce de Paris</strong><span class="desc">Consulta de casos mercantiles, concursos, procedimientos de insolvencia y documentos judiciales comerciales.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-33"><div onclick="eliminar(&quot;internacional&quot;, 33)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 187);"><strong>FR - URSSAF.fr</strong><span class="desc">Información sobre contratación, cotizaciones, afiliaciones sociales y formalidades de empleador en Francia.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-34"><div onclick="eliminar(&quot;internacional&quot;, 34)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(232, 62, 140);"><strong>Gestión</strong><span class="desc">Negocios y economía.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-35"><div onclick="eliminar(&quot;internacional&quot;, 35)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(23, 162, 184);"><strong>Hays España</strong><span class="desc">Consultora de talento.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-36"><div onclick="eliminar(&quot;internacional&quot;, 36)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(0, 255, 98);"><strong>ILO - Revista Internacional del Trabajo</strong><span class="desc">Publicación académica de la OIT</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-37"><div onclick="eliminar(&quot;internacional&quot;, 37)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(220, 53, 69);"><strong>Intangible Capital</strong><span class="desc">Conocimiento organizacional.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-38"><div onclick="eliminar(&quot;internacional&quot;, 38)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 76);"><strong>Marta Alles</strong><span class="desc">Autora experta en RRHH</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-39"><div onclick="eliminar(&quot;internacional&quot;, 39)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(155, 89, 182);"><strong>OIT</strong><span class="desc">Organización Internacional del Trabajo.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-40"><div onclick="eliminar(&quot;internacional&quot;, 40)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(52, 152, 219);"><strong>Portal ERP – RRHH LATAM</strong><span class="desc">Transformación digital.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-41"><div onclick="eliminar(&quot;internacional&quot;, 41)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 0, 51);"><strong>Revista LATAM</strong><span class="desc">Estudios antropológicos del trabajo</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-42"><div onclick="eliminar(&quot;internacional&quot;, 42)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(255, 187, 0);"><strong>Revista Recursos Humanos</strong><span class="desc">Especializada en gestión humana</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-43"><div onclick="eliminar(&quot;internacional&quot;, 43)">Eliminar</div></div></div><div class="card-wrapper"><div class="card" style="background-color: rgb(142, 68, 173);"><strong>RRHH Digital</strong><span class="desc">Medio digital de RRHH.</span></div><div class="menu-btn-box">⋮</div><div class="menu-options" id="menu-internacional-44"><div onclick="eliminar(&quot;internacional&quot;, 44)">Eliminar</div></div></div></div>
+<div class="formulario" style="display: none;">
+<button onclick="mostrarRestaurar()" style="margin-bottom: 10px;">Restaurar página eliminada</button>
+<div id="restaurarZona" style="display: none;">
+<select id="restaurarLista" style="margin-bottom: 10px;"></select>
+<button onclick="restaurarUna()">Restaurar seleccionada</button>
+</div>
+<input id="nombre" placeholder="Nombre de la NUEVA página" type="text">
+<input id="url" placeholder="https://ejemplo.com" type="url">
+<input id="descripcion" placeholder="Descripción" type="text">
+<input id="color" type="color" value="#007bff">
+<select id="categoria">
+<option value="nacional">Nacional</option>
+<option value="internacional">Internacional</option>
+</select>
+<button onclick="agregarEnlace()">Agregar Enlace</button>
+<button onclick="exportarCambios()" style="background-color: #ffc107; color: #000; font-weight: bold; margin-top: 10px;">Exportar archivo con cambios guardados</button>
+<button onclick="cerrarFormulario()" style="margin-top: 10px;">Cerrar menú</button></div>
+<script>
+let datosIniciales = {
+  nacional: [{"nombre": "ACRIP Nacional", "url": "https://acripnacional.org", "descripcion": "Profesionales en gestión humana.", "color": "#28a745"}, {"nombre": "ADRES", "url": "https://www.adres.gov.co/Paginas/default.aspx", "descripcion": "Sistema de salud.", "color": "#20c997"}, {"nombre": "Acrip Valle", "url": "https://acripvalle.org", "descripcion": "Regional ACRIP para RRHH.", "color": "#6f42c1"}, {"nombre": "Asofondos", "url": "https://asofondos.org.co", "descripcion": "Fondos de pensiones.", "color": "#007bff"}, {"nombre": "Buk Colombia", "url": "https://www.buk.co", "descripcion": "Talento humano y nómina.", "color": "#d63384"}, {"nombre": "Cafam", "url": "https://www.cafam.com.co", "descripcion": "Caja de compensación.", "color": "#fd7e14"}, {"nombre": "Colpensiones", "url": "https://www.colpensiones.gov.co", "descripcion": "Pensión pública.", "color": "#6610f2"}, {"nombre": "Compensar", "url": "https://corporativo.compensar.com", "descripcion": "Servicios integrales.", "color": "#e83e8c"}, {"nombre": "DANE", "url": "https://www.dane.gov.co", "descripcion": "Estadísticas oficiales.", "color": "#e67e22"}, {"nombre": "DIAN", "url": "https://www.dian.gov.co", "descripcion": "Tributaria y aduanera.", "color": "#17a2b8"}, {"nombre": "El Empleo", "url": "https://www.elempleo.com", "descripcion": "Portal de empleo.", "color": "#ffc107"}, {"nombre": "Famisanar", "url": "https://www.famisanar.com.co", "descripcion": "EPS servicios de salud.", "color": "#dc3545"}, {"nombre": "ICBF", "url": "https://www.icbf.gov.co", "descripcion": "Niñez y familia.", "color": "#1abc9c"}, {"nombre": "Legis Gestión Humana", "url": "https://www.gestionhumana.com", "descripcion": "Normativa RRHH.", "color": "#9b59b6"}, {"nombre": "MinSalud", "url": "https://www.minsalud.gov.co", "descripcion": "Salud y protección social.", "color": "#3498db"}, {"nombre": "MinTrabajo", "url": "https://www.mintrabajo.gov.co", "descripcion": "Normativa laboral.", "color": "#8e44ad"}, {"nombre": "Observatorio Laboral", "url": "https://ole.mineducacion.gov.co", "descripcion": "Datos laborales.", "color": "#e74c3c"}, {"nombre": "Positiva", "url": "https://www.positiva.gov.co", "descripcion": "ARL especializada.", "color": "#2ecc71"}, {"nombre": "Preflex", "url": "https://www.preflex.com.co", "descripcion": "Tecnología industrial.", "color": "#fd7e14"}, {"nombre": "SENA", "url": "https://www.sena.edu.co", "descripcion": "Formación técnica gratuita.", "color": "#2980b9"}, {"nombre": "Supersalud", "url": "https://www.supersalud.gov.co", "descripcion": "Control del sistema de salud.", "color": "#7f8c8d"}, {"nombre": "UGPP", "url": "https://www.ugpp.gov.co", "descripcion": "Fiscaliza seguridad social.", "color": "#5dade2"}],
+  internacional: [{"nombre": "CEDLAS", "url": "https://cedlas.econo.unlp.edu.ar", "descripcion": "Investigación laboral LATAM.", "color": "#28a745"}, {"nombre": "Capacitarte", "url": "https://www.capacitarte.org", "descripcion": "Cursos online profesionales.", "color": "#20c997"}, {"nombre": "Capacítate para el empleo", "url": "https://capacitateparaelempleo.org", "descripcion": "Fundación Carlos Slim.", "color": "#6f42c1"}, {"nombre": "Capital Humano", "url": "https://capitalhumano.cl", "descripcion": "Talento en Chile.", "color": "#007bff"}, {"nombre": "DCH", "url": "https://orgdch.org", "descripcion": "Directivos de RRHH.", "color": "#d63384"}, {"nombre": "DCH Colombia", "url": "https://orgdch.org/colombia", "descripcion": "Capítulo Colombia.", "color": "#fd7e14"}, {"nombre": "Equipos y Talento", "url": "https://www.equiposytalento.com", "descripcion": "Noticias de RRHH.", "color": "#6610f2"}, {"nombre": "Gestión", "url": "https://gestion.pe", "descripcion": "Negocios y economía.", "color": "#e83e8c"}, {"nombre": "Gestión de Personas", "url": "https://www.gestiondepersonas.cl", "descripcion": "RRHH y cultura.", "color": "#e67e22"}, {"nombre": "Hays España", "url": "https://www.hays.es", "descripcion": "Consultora de talento.", "color": "#17a2b8"}, {"nombre": "ILO – Revista Internacional del Trabajo", "url": "https://www.ilo.org/global/publications/ilo-journal/lang--es/index.htm", "descripcion": "Publicación OIT.", "color": "#ffc107"}, {"nombre": "Intangible Capital", "url": "https://www.intangiblecapital.org", "descripcion": "Conocimiento organizacional.", "color": "#dc3545"}, {"nombre": "Marithé Alles", "url": "https://www.marithealles.com", "descripcion": "Experta en RRHH.", "color": "#1abc9c"}, {"nombre": "OIT", "url": "https://www.ilo.org/es", "descripcion": "Organización Internacional del Trabajo.", "color": "#9b59b6"}, {"nombre": "Portal ERP – RRHH LATAM", "url": "https://www.rrhhdigital.com", "descripcion": "Transformación digital.", "color": "#3498db"}, {"nombre": "RRHH Digital", "url": "https://www.rrhhdigital.com", "descripcion": "Medio digital de RRHH.", "color": "#8e44ad"}, {"nombre": "Revista LATAM – Antropología del Trabajo", "url": "https://www.revistalatam.org", "descripcion": "Estudios del trabajo.", "color": "#e74c3c"}, {"nombre": "Revista Recursos Humanos", "url": "https://www.revistarrhh.com", "descripcion": "Especializada en RRHH.", "color": "#2ecc71"}]
+};
+
+let eliminados = [];
+let enlaces = {
+  "nacional": [
+    {
+      "nombre": "ACRIP Nacional",
+      "url": "https://acripnacional.org",
+      "descripcion": "Profesionales en gestión humana.",
+      "color": "#28a745"
+    },
+    {
+      "nombre": "Acrip Valle",
+      "url": "https://acripvalle.org",
+      "descripcion": "Regional ACRIP para RRHH.",
+      "color": "#6f42c1"
+    },
+    {
+      "nombre": "ADRES",
+      "url": "https://www.adres.gov.co/Paginas/default.aspx",
+      "descripcion": "Sistema de salud.",
+      "color": "#20c997"
+    },
+    {
+      "nombre": "Asofondos",
+      "url": "https://asofondos.org.co",
+      "descripcion": "Fondos de pensiones.",
+      "color": "#007bff"
+    },
+    {
+      "nombre": "Buk Colombia",
+      "url": "https://www.buk.co",
+      "descripcion": "Talento humano y nómina.",
+      "color": "#d63384"
+    },
+    {
+      "nombre": "Cafam",
+      "url": "https://www.cafam.com.co",
+      "descripcion": "Caja de compensación.",
+      "color": "#fd7e14"
+    },
+    {
+      "nombre": "CO - Cámara Colombiana de Comercio Electrónico (CCCE)",
+      "url": "https://www.ccce.org.co",
+      "descripcion": "Regulación, comercio digital, eventos y estadísticas de e-commerce.",
+      "color": "#ff9500"
+    },
+    {
+      "nombre": "CO - Cámara de Comercio de Bogotá (CCB)",
+      "url": "https://www.ccb.org.co",
+      "descripcion": "Consulta de certificados, constitución de sociedades, registro mercantil, conciliaciones.",
+      "color": "#00ff62"
+    },
+    {
+      "nombre": "CO - Coljuristas, CCJ",
+      "url": " https://www.coljuristas.org",
+      "descripcion": "Publicación de jurisprudencia, análisis en derechos humanos, justicia transicional y doctrina jurídica.",
+      "color": "#51a03b"
+    },
+    {
+      "nombre": "CO - Consejo de Estado",
+      "url": "https://www.consejodeestado.gov.co",
+      "descripcion": "Jurisprudencia del alto tribunal de lo contencioso administrativo.",
+      "color": "#d400ff"
+    },
+    {
+      "nombre": "CO - Corte Constitucional",
+      "url": "https://www.corteconstitucional.gov.co",
+      "descripcion": "Consulta de sentencias, jurisprudencia y acciones públicas.",
+      "color": "#ff0000"
+    },
+    {
+      "nombre": "CO - Función Pública",
+      "url": "https://www.funcionpublica.gov.co",
+      "descripcion": "Normativa laboral y organizacional del Estado colombiano.",
+      "color": "#ae00ff"
+    },
+    {
+      "nombre": "CO - Legiscomex",
+      "url": "https://www.legiscomex.com",
+      "descripcion": "Inteligencia de negocios para comercio internacional (aranceles, tratados, estadísticas).",
+      "color": "#8c00ff"
+    },
+    {
+      "nombre": "CO - Leyex.info",
+      "url": "https://www.leyex.info",
+      "descripcion": "Base de datos legislativa gratuita, buscador por palabra clave.",
+      "color": "#aeff00"
+    },
+    {
+      "nombre": "CO - MinComercio (Ministerio de Comercio, Industria y Turismo)",
+      "url": "https://www.mincit.gov.co",
+      "descripcion": "Normas de comercio exterior, zonas francas, comercio electrónico.",
+      "color": "#bb00ff"
+    },
+    {
+      "nombre": "CO - MinJusticia",
+      "url": "https://www.minjusticia.gov.co",
+      "descripcion": "Leyes, políticas públicas y trámites relacionados con justicia.",
+      "color": "#0084ff"
+    },
+    {
+      "nombre": "CO - Rama Judicial",
+      "url": "https://www.ramajudicial.gov.co",
+      "descripcion": "Portal de consulta de procesos, tutelas y notificaciones judiciales.",
+      "color": "#00ff11"
+    },
+    {
+      "nombre": "CO - RUES (Registro Único Empresarial y Social)",
+      "url": "https://www.rues.org.co",
+      "descripcion": "Acceso a toda la información de sociedades en Colombia.",
+      "color": "#ff004c"
+    },
+    {
+      "nombre": "CO - SIC",
+      "url": "https://sedeelectronica.sic.gov.co/",
+      "descripcion": "Superintendencia de Industria y Comercio",
+      "color": "#ffae00"
+    },
+    {
+      "nombre": "CO - Sistema Único de Información Normativa (SUIN)",
+      "url": "https://www.suin-juriscol.gov.co",
+      "descripcion": "Normograma actualizado del Estado colombiano.",
+      "color": "#00e1ff"
+    },
+    {
+      "nombre": "CO - Supersociedades",
+      "url": "https://www.supersociedades.gov.co",
+      "descripcion": "Normas para sociedades comerciales, insolvencias y reorganización.",
+      "color": "#ff0040"
+    },
+    {
+      "nombre": "CO - Tutelas en línea",
+      "url": "https://www.ramajudicial.gov.co/web/guest/tutela-en-linea",
+      "descripcion": "Herramienta para presentar tutelas virtuales.",
+      "color": "#00ff91"
+    },
+    {
+      "nombre": "Colpensiones",
+      "url": "https://www.colpensiones.gov.co",
+      "descripcion": "Pensión pública.",
+      "color": "#6610f2"
+    },
+    {
+      "nombre": "Compensar",
+      "url": "https://corporativo.compensar.com",
+      "descripcion": "Servicios integrales.",
+      "color": "#e83e8c"
+    },
+    {
+      "nombre": "DANE",
+      "url": "https://www.dane.gov.co",
+      "descripcion": "Estadísticas oficiales.",
+      "color": "#e67e22"
+    },
+    {
+      "nombre": "DIAN",
+      "url": "https://www.dian.gov.co",
+      "descripcion": "Tributaria y aduanera.",
+      "color": "#17a2b8"
+    },
+    {
+      "nombre": "El Empleo",
+      "url": "https://www.elempleo.com",
+      "descripcion": "Portal de empleo.",
+      "color": "#ffc107"
+    },
+    {
+      "nombre": "El Tiempo",
+      "url": "https://www.eltiempo.com",
+      "descripcion": "Diario Colombiano de noticias ",
+      "color": "#1e00ff"
+    },
+    {
+      "nombre": "Famisanar",
+      "url": "https://www.famisanar.com.co",
+      "descripcion": "EPS servicios de salud.",
+      "color": "#dc3545"
+    },
+    {
+      "nombre": "ICBF",
+      "url": "https://www.icbf.gov.co",
+      "descripcion": "Niñez y familia.",
+      "color": "#1abc9c"
+    },
+    {
+      "nombre": "Legis Gestión Humana",
+      "url": "https://www.gestionhumana.com",
+      "descripcion": "Normativa RRHH.",
+      "color": "#9b59b6"
+    },
+    {
+      "nombre": "MinSalud",
+      "url": "https://www.minsalud.gov.co",
+      "descripcion": "Salud y protección social.",
+      "color": "#3498db"
+    },
+    {
+      "nombre": "MinTrabajo",
+      "url": "https://www.mintrabajo.gov.co",
+      "descripcion": "Normativa laboral.",
+      "color": "#8e44ad"
+    },
+    {
+      "nombre": "Observatorio Laboral",
+      "url": "https://ole.mineducacion.gov.co",
+      "descripcion": "Datos laborales.",
+      "color": "#e74c3c"
+    },
+    {
+      "nombre": "Positiva",
+      "url": "https://www.positiva.gov.co",
+      "descripcion": "ARL especializada.",
+      "color": "#2ecc71"
+    },
+    {
+      "nombre": "Preflex",
+      "url": "https://www.preflex.com.co",
+      "descripcion": "Tecnología industrial.",
+      "color": "#fd7e14"
+    },
+    {
+      "nombre": "SENA",
+      "url": "https://www.sena.edu.co",
+      "descripcion": "Formación técnica gratuita.",
+      "color": "#2980b9"
+    },
+    {
+      "nombre": "Supersalud",
+      "url": "https://www.supersalud.gov.co",
+      "descripcion": "Control del sistema de salud.",
+      "color": "#7f8c8d"
+    },
+    {
+      "nombre": "UGPP",
+      "url": "https://www.ugpp.gov.co",
+      "descripcion": "Fiscaliza seguridad social.",
+      "color": "#5dade2"
+    }
+  ],
+  "internacional": [
+    {
+      "nombre": "Capacitarte",
+      "url": "https://www.capacitarte.org",
+      "descripcion": "Cursos online profesionales.",
+      "color": "#20c997"
+    },
+    {
+      "nombre": "Capacítate para el empleo",
+      "url": "https://capacitateparaelempleo.org",
+      "descripcion": "Fundación Carlos Slim.",
+      "color": "#6f42c1"
+    },
+    {
+      "nombre": "Capial Humano",
+      "url": "https://capitalhumano.emol.com/",
+      "descripcion": "Portal sobre gestión de talento",
+      "color": "#00ffd5"
+    },
+    {
+      "nombre": "CEDLAS",
+      "url": "https://cedlas.econo.unlp.edu.ar",
+      "descripcion": "Investigación laboral LATAM.",
+      "color": "#28a745"
+    },
+    {
+      "nombre": "DCH",
+      "url": "https://orgdch.org",
+      "descripcion": "Directivos de RRHH.",
+      "color": "#d63384"
+    },
+    {
+      "nombre": "DCH Colombia",
+      "url": "https://orgdch.org/colombia",
+      "descripcion": "Capítulo Colombia.",
+      "color": "#fd7e14"
+    },
+    {
+      "nombre": "Doctrine – Jurisprudencia y doctrina",
+      "url": "https://www.doctrine.fr",
+      "descripcion": "Base de datos legal con fallos judiciales, análisis doctrinal y comentarios jurídicos.",
+      "color": "#00ff59"
+    },
+    {
+      "nombre": "Equipos y Talento",
+      "url": "https://www.equiposytalento.com",
+      "descripcion": "Noticias de RRHH.",
+      "color": "#6610f2"
+    },
+    {
+      "nombre": "FR - AFE – Agence France Entrepreneur (ex. AFE-Création)",
+      "url": "https://bpifrance-creation.fr",
+      "descripcion": "Portal de apoyo a la creación de empresas: guías, normativa, plan de negocios, financiación, acompañamiento.",
+      "color": "#00eeff"
+    },
+    {
+      "nombre": "FR - ANEF – Étrangers en France",
+      "url": "https://administration-etrangers-en-france.interieur.gouv.fr",
+      "descripcion": "Étrangers en France\tDémarches administratives pour étrangers : séjour, naturalisation.",
+      "color": "#7300ff"
+    },
+    {
+      "nombre": "FR - Apec – Association pour l’emploi des cadres",
+      "url": "https://www.apec.fr",
+      "descripcion": "Especializado en empleos cualificados y ejecutivos (juristas, ingenieros, managers), ideal para perfiles profesionales universitarios.",
+      "color": "#480755"
+    },
+    {
+      "nombre": "FR - Barreau de Paris – Colegio de abogados",
+      "url": "https://www.avocatparis.org",
+      "descripcion": "Colegio de abogados\tNormas éticas, directorio de abogados, servicios y noticias jurídicas del Colegio.",
+      "color": "#590769"
+    },
+    {
+      "nombre": "FR - BODACC (Bulletin Officiel des Annonces Civiles et Commerciales)",
+      "url": "https://www.bodacc.fr",
+      "descripcion": "Publicación oficial de eventos comerciales: creación de empresas, cesiones, liquidaciones, procedimientos judiciales.",
+      "color": "#ff0000"
+    },
+    {
+      "nombre": "FR - BOFiP – Fiscalidad francesa oficial",
+      "url": "https://bofip.impots.gouv.fr",
+      "descripcion": "Normas interpretativas de impuestos, IVA y régimen fiscal aplicables a empresas y personas.",
+      "color": "#6d0de3"
+    },
+    {
+      "nombre": "FR - CCI Hérault – Chambre de Commerce et d’Industrie (Montpellier)",
+      "url": "https://www.herault.cci.fr",
+      "descripcion": "Apoyo a empresas locales: creación, desarrollo, exportación, formación y representación ante autoridades.",
+      "color": "#baada6"
+    },
+    {
+      "nombre": "FR - CNCDH – Droits de l’Homme",
+      "url": "https://www.cncdh.fr",
+      "descripcion": "Suivi des droits humains et législation internationale en France.",
+      "color": "#fb00ff"
+    },
+    {
+      "nombre": "FR - CNIL – Protection des données",
+      "url": "https://www.cnil.fr",
+      "descripcion": "Protection des données\tOrganisme français de protection de la vie privée (RGPD).",
+      "color": "#009dff"
+    },
+    {
+      "nombre": "FR - Code du Travail Numérique",
+      "url": "https://code.travail.gouv.fr",
+      "descripcion": "Interprétation des droits du travail en ligne, clair et interactif.",
+      "color": "#37ff00"
+    },
+    {
+      "nombre": "FR - Emploi.gouv.fr – Travail et Emploi",
+      "url": "https://travail-emploi.gouv.fr",
+      "descripcion": "Portal del Ministerio de Trabajo. Información sobre contratos, derechos laborales, tipos de contratos, ayudas a la contratación, inserción laboral y estadísticas del mercado.",
+      "color": "#d37069"
+    },
+    {
+      "nombre": "FR - Emplois Montpellier 3M – Mairie & Métropole",
+      "url": "https://www.montpellier3m.fr/offres-emploi",
+      "descripcion": "Portal de empleo regional: ofertas públicas y privadas, información sobre reclutamientos administrativos, convocatorias municipales y alertas de empleo.",
+      "color": "#e85e5e"
+    },
+    {
+      "nombre": "FR - France-Visas",
+      "url": "https://france-visas.gouv.fr",
+      "descripcion": "Demande et suivi de visas pour la France.",
+      "color": "#00ffaa"
+    },
+    {
+      "nombre": "FR - Greffe du Tribunal de Commerce de Montpellier",
+      "url": "https://www.greffe-tc-montpellier.fr",
+      "descripcion": "Gestión del Registro de Comercio y Sociedades (RCS), emisión de Kbis, trámites societarios, audiencias mercantiles y procedimientos de insolvencia. Oficina judicial clave para abogados y empresas de la región.",
+      "color": "#9a4d0e"
+    },
+    {
+      "nombre": "FR - Infogreffe",
+      "url": "https://www.infogreffe.fr",
+      "descripcion": "Registro mercantil de empresas (Kbis, balances, estatutos, procedimientos judiciales). Acceso a información legal y financiera de sociedades.",
+      "color": "#007bff"
+    },
+    {
+      "nombre": "FR - INPI (Institut National de la Propriété Industrielle)",
+      "url": "https://www.inpi.fr",
+      "descripcion": "Registro y protección de marcas, patentes, diseños industriales y nombres comerciales en Francia.",
+      "color": "#ff00c8"
+    },
+    {
+      "nombre": "FR - Légifrance",
+      "url": "https://www.legifrance.gouv.fr",
+      "descripcion": "Portail officiel du droit français : codes, lois, jurisprudence.",
+      "color": "#ff0000"
+    },
+    {
+      "nombre": "FR - LinkedIn (Jobs France)",
+      "url": "https://www.linkedin.com/jobs?originalSubdomain=fr",
+      "descripcion": "La red profesional más grande del mundo: búsqueda de empleos en toda Francia, incluso en Montpellier. Permite postular directamente, crear alertas laborales y networking profesional",
+      "color": "#f78294"
+    },
+    {
+      "nombre": "FR - Ministère de la Justice",
+      "url": "https://www.justice.gouv.fr",
+      "descripcion": "Informations officielles sur la justice française.",
+      "color": "#00fffb"
+    },
+    {
+      "nombre": "FR - Pôle emploi",
+      "url": "https://www.pole-emploi.fr",
+      "descripcion": "Portal oficial nacional de empleo en Francia. Ofrece ofertas de trabajo, inscripción, seguimiento de candidaturas y acceso a formación y ayudas.",
+      "color": "#744190"
+    },
+    {
+      "nombre": "FR - Service Public (Portail officiel)",
+      "url": "https://www.service-public.fr",
+      "descripcion": "Portal único de la administración pública francesa. Contiene fichas temáticas, trámites, formularios, normativas y ayudas legales para ciudadanos, empresas y extranjeros.",
+      "color": "#895248"
+    },
+    {
+      "nombre": "FR - Service-Public.fr",
+      "url": "https://www.service-public.fr",
+      "descripcion": "Portal oficial de información y trámites para ciudadanos y empresas: formularios, residencia, trabajo, contratos, familia, etc.",
+      "color": "#ae00ff"
+    },
+    {
+      "nombre": "FR - Service-public.fr – Droit",
+      "url": "https://www.service-public.fr/particuliers/vosdroits",
+      "descripcion": "Accès aux démarches juridiques et administratives pour citoyens.",
+      "color": "#ff00a2"
+    },
+    {
+      "nombre": "FR - Service-Public.fr – Emploi et travail",
+      "url": "https://www.service-public.fr/particuliers/vosdroits/N19810",
+      "descripcion": "Fichas legales y trámites sobre contratos laborales, despidos, derecho laboral francés.",
+      "color": "#b104c8"
+    },
+    {
+      "nombre": "FR - Travail.gouv.fr – Info laboral oficial",
+      "url": "https://travail-emploi.gouv.fr",
+      "descripcion": "Guía del derecho laboral, tipos de contrato, ayudas e inserción profesional.",
+      "color": "#16f3ef"
+    },
+    {
+      "nombre": "FR - Tribunal de commerce de Paris",
+      "url": "https://www.greffe-tc-paris.fr",
+      "descripcion": "Consulta de casos mercantiles, concursos, procedimientos de insolvencia y documentos judiciales comerciales.",
+      "color": "#ff9500"
+    },
+    {
+      "nombre": "FR - URSSAF.fr",
+      "url": "https://www.urssaf.fr",
+      "descripcion": "Información sobre contratación, cotizaciones, afiliaciones sociales y formalidades de empleador en Francia.",
+      "color": "#ff00bb"
+    },
+    {
+      "nombre": "Gestión",
+      "url": "https://gestion.pe",
+      "descripcion": "Negocios y economía.",
+      "color": "#e83e8c"
+    },
+    {
+      "nombre": "Hays España",
+      "url": "https://www.hays.es",
+      "descripcion": "Consultora de talento.",
+      "color": "#17a2b8"
+    },
+    {
+      "nombre": "ILO - Revista Internacional del Trabajo",
+      "url": "https://www.ilo.org/es/acerca-de-la-oit",
+      "descripcion": "Publicación académica de la OIT",
+      "color": "#00ff62"
+    },
+    {
+      "nombre": "Intangible Capital",
+      "url": "https://www.intangiblecapital.org",
+      "descripcion": "Conocimiento organizacional.",
+      "color": "#dc3545"
+    },
+    {
+      "nombre": "Marta Alles",
+      "url": "https://www.mairrhh.com/",
+      "descripcion": "Autora experta en RRHH",
+      "color": "#ff004c"
+    },
+    {
+      "nombre": "OIT",
+      "url": "https://www.ilo.org/es",
+      "descripcion": "Organización Internacional del Trabajo.",
+      "color": "#9b59b6"
+    },
+    {
+      "nombre": "Portal ERP – RRHH LATAM",
+      "url": "https://www.rrhhdigital.com",
+      "descripcion": "Transformación digital.",
+      "color": "#3498db"
+    },
+    {
+      "nombre": "Revista LATAM",
+      "url": "https://ojs.ceil-conicet.gov.ar/index.php/lat/index",
+      "descripcion": "Estudios antropológicos del trabajo",
+      "color": "#ff0033"
+    },
+    {
+      "nombre": "Revista Recursos Humanos",
+      "url": "https://revistarecursoshumanos.com/",
+      "descripcion": "Especializada en gestión humana",
+      "color": "#ffbb00"
+    },
+    {
+      "nombre": "RRHH Digital",
+      "url": "https://www.rrhhdigital.com",
+      "descripcion": "Medio digital de RRHH.",
+      "color": "#8e44ad"
+    }
+  ]
+};
+
+function render() {
+  ["nacional", "internacional"].forEach(tipo => {
+    const contenedor = document.getElementById(tipo);
+    contenedor.innerHTML = "";
+    enlaces[tipo].forEach((link, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "card-wrapper";
+
+      const div = document.createElement("div");
+      div.className = "card";
+      div.style.backgroundColor = link.color;
+      div.innerHTML = `<strong>${link.nombre}</strong><span class='desc'>${link.descripcion}</span>`;
+      div.onclick = () => window.open(link.url, "_blank");
+
+      const boton = document.createElement("div");
+      boton.className = "menu-btn-box";
+      boton.innerHTML = "⋮";
+      boton.onclick = (e) => {
+        e.stopPropagation();
+        document.querySelectorAll(".menu-options").forEach(m => m.style.display = "none");
+        const menu = document.getElementById(`menu-${tipo}-${i}`);
+        if (menu) menu.style.display = "block";
+      };
+
+      const menu = document.createElement("div");
+      menu.className = "menu-options";
+      menu.id = `menu-${tipo}-${i}`;
+      menu.innerHTML = `<div onclick='eliminar("${tipo}", ${i})'>Eliminar</div>`;
+
+      wrapper.appendChild(div);
+      wrapper.appendChild(boton);
+      wrapper.appendChild(menu);
+      contenedor.appendChild(wrapper);
+    });
+  });
+}
+
+function agregarEnlace() {
+  const nombre = document.getElementById("nombre").value;
+  const url = document.getElementById("url").value;
+  const descripcion = document.getElementById("descripcion").value;
+  const color = document.getElementById("color").value;
+  const categoria = document.getElementById("categoria").value;
+  if (!nombre || !url) return alert("Nombre y URL son obligatorios");
+  enlaces[categoria].push({ nombre, url, descripcion, color });
+  guardarYRender();
+  document.getElementById("nombre").value = "";
+  document.getElementById("url").value = "";
+  document.getElementById("descripcion").value = "";
+}
+
+function eliminar(tipo, index) {
+  eliminados.push({ ...enlaces[tipo][index], tipo });
+  // eliminado localStorage eliminados
+  if (confirm("¿Eliminar este enlace?")) {
+    enlaces[tipo].splice(index, 1);
+    guardarYRender();
+  }
+}
+
+function mostrarRestaurar() {
+  const zona = document.getElementById("restaurarZona");
+  zona.style.display = zona.style.display === "none" ? "block" : "none";
+  const select = document.getElementById("restaurarLista");
+  select.innerHTML = "";
+  eliminados.forEach((item, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = `${item.nombre} (${item.tipo})`;
+    select.appendChild(opt);
+  });
+}
+
+function restaurarUna() {
+  const index = document.getElementById("restaurarLista").value;
+  const item = eliminados.splice(index, 1)[0];
+  enlaces[item.tipo].push({ nombre: item.nombre, url: item.url, descripcion: item.descripcion, color: item.color });
+  guardarYRender();
+  // eliminado localStorage eliminados
+  mostrarRestaurar();
+}
+
+function ordenarEnlaces() {
+  ['nacional', 'internacional'].forEach(tipo => {
+    enlaces[tipo].sort((a, b) => a.nombre.localeCompare(b.nombre));
+  });
+}
+
+function guardarYRender() {
+  ordenarEnlaces();
+  // eliminado localStorage enlaces
+  render();
+}
+
+document.addEventListener("click", () => {
+  document.querySelectorAll(".menu-options").forEach(m => m.style.display = "none");
+});
+
+function restaurarOriginales() {
+  if (!confirm("Esto eliminará tus cambios y restaurará todos los enlaces al estado original. ¿Deseas continuar?")) return;
+  enlaces = JSON.parse(JSON.stringify(datosIniciales));
+  guardarYRender();
+}
+
+render();
+</script>
+<script>
+function exportarCambios() {
+  const doc = document.documentElement.cloneNode(true);
+  const scriptContent = document.querySelector("script").textContent;
+
+  const jsonEnlaces = JSON.stringify(enlaces, null, 2);
+  const enlacesEncoded = 'let enlaces = ' + jsonEnlaces + ';';
+
+  // Reemplaza la parte del script original que define enlaces
+  const updatedScript = scriptContent.replace(/let enlaces = .*?;\n/s, enlacesEncoded + '\n');
+
+  const scripts = doc.getElementsByTagName("script");
+  if (scripts.length > 0) {
+    scripts[0].textContent = updatedScript;
+  }
+
+  const finalHTML = '<!DOCTYPE html>\n' + doc.outerHTML;
+
+  const blob = new Blob([finalHTML], {type: "text/html"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Brave_Natalia_Completo_Guardado.html";
+  link.click();
+}
+</script><script>
+function abrirFormulario() {
+  document.querySelector('.formulario').style.display = 'block';
+  document.getElementById('btnAbrirFormulario').style.display = 'none';
+}
+function cerrarFormulario() {
+  document.querySelector('.formulario').style.display = 'none';
+  document.getElementById('btnAbrirFormulario').style.display = 'block';
+}
+</script><script>
+function abrirFormulario() {
+  document.querySelector('.formulario').style.display = 'block';
+  document.getElementById('btnAbrirFormulario').style.display = 'none';
+}
+function cerrarFormulario() {
+  document.querySelector('.formulario').style.display = 'none';
+  document.getElementById('btnAbrirFormulario').style.display = 'block';
+}
+</script>
+<button id="btnAbrirFormulario" onclick="abrirFormulario()" style="display: block; margin-top: 20px;">Agregar enlace</button>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('.formulario').style.display = 'none';
+  document.getElementById('btnAbrirFormulario').style.display = 'block';
+});
+</script></body></html>
